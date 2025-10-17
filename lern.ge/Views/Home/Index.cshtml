@@ -1,6 +1,73 @@
 ﻿@{
     ViewData["Title"] = "მთავარი";
 }
+<style>
+    /* ქარდის სათაურები */
+    .card h5,
+    .card h6 {
+        font-weight: 800 !important;
+        color: #111 !important;
+        font-size: 1.35rem !important; /* გაზრდილი ზომა */
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.25);
+    }
+
+    /* ქარდის ტექსტი */
+    .card p {
+        color: #222 !important;
+        font-size: 1.15rem; /* ოდნავ უფრო დიდი ტექსტი */
+        font-weight: 500;
+        line-height: 1.7;
+    }
+
+    /* ფერადი ქარდები */
+    .card.bg-primary,
+    .card.bg-success,
+    .card.bg-warning {
+        border: none !important;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+        .card.bg-primary:hover,
+        .card.bg-success:hover,
+        .card.bg-warning:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.3);
+        }
+
+        /* ფერად ფონებზე მკვეთრი ტექსტი */
+        .card.bg-primary h6,
+        .card.bg-success h6,
+        .card.bg-warning h6 {
+            color: #fff !important;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+            font-size: 1.3rem !important;
+        }
+
+    .card i {
+        text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+        font-size: 2.8rem !important;
+    }
+
+    /* შიდა კონტენტის ფონური კონტრასტი */
+    .card-body {
+        background-color: #fff;
+        border-radius: 0.9rem;
+    }
+
+    /* Responsive ტექსტი */
+    @@media (max-width: 768px) {
+        .card h5, .card h6
+
+    {
+        font-size: 1.15rem !important;
+    }
+
+    .card p {
+        font-size: 1.05rem;
+    }
+
+    }
+</style>
 
 <section class="hero-section">
 
