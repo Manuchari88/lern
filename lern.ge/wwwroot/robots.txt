@@ -1,0 +1,6 @@
+# All user-agents are allowed
+User-agent: *
+Disallow:
+
+# Sitemap location
+Sitemap: https://lern.ge/sitemap.xml
