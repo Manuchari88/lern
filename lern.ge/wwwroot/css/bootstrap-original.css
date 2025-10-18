@@ -1,0 +1,178 @@
+/* ========= Hero Section ========= */
+.hero-section {
+    position: relative;
+    margin-bottom: 70px;
+}
+
+.course-menu-overlap {
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    z-index: 10;
+}
+
+/* ========= Contact Section ========= */
+.wide-contact-section {
+    background-color: #f8f9fa;
+    color: #212529;
+    padding: 50px 0;
+}
+
+    .wide-contact-section h3,
+    .wide-contact-section p {
+        color: #212529;
+    }
+
+    .wide-contact-section a {
+        color: #B8860B;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+        .wide-contact-section a:hover {
+            color: #ffb700;
+        }
+
+    .wide-contact-section .btn-outline-primary {
+        border-color: #B8860B;
+        color: #B8860B;
+    }
+
+        .wide-contact-section .btn-outline-primary:hover {
+            background-color: #B8860B;
+            color: #fff;
+        }
+
+/* ========= Thin Header ========= */
+.thin-header {
+    background-color: #1B1B1B;
+    padding: 8px 0;
+    font-size: 0.95rem;
+    color: #fff;
+}
+
+/* ========= Main Contact Bar ========= */
+.main-contact-bar {
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.contact-number-large {
+    color: #B8860B;
+}
+
+/* ========= Footer ========= */
+footer {
+    background-color: #1B1B1B;
+    color: #bbb;
+}
+
+/* ========= Top Bar ========= */
+.top-bar {
+    background-color: #0F172A;
+    color: #FFFFFF;
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    position: fixed;
+    opacity: 0.74;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+    .top-bar .title {
+        color: #FACC15;
+        font-weight: 700;
+        font-size: 1.25rem;
+        letter-spacing: 0.3px;
+    }
+
+    .top-bar .contact-info {
+        font-weight: 500;
+    }
+
+        .top-bar .contact-info i {
+            margin-right: 6px;
+            font-size: 1.2rem;
+            color: #22C55E;
+        }
+
+        .top-bar .contact-info .phone {
+            color: #22C55E;
+            font-weight: 600;
+            font-size: 1.25rem;
+        }
+
+    .top-bar a {
+        color: #FFFFFF;
+        margin-left: 14px;
+        transition: 0.2s;
+        text-decoration: none;
+        font-size: 1.15rem;
+    }
+
+        .top-bar a:hover {
+            color: #FACC15;
+        }
+
+/* ========= Cards ========= */
+.card h5,
+.card h6 {
+    font-weight: 800 !important;
+    color: #111 !important;
+    font-size: 1.35rem !important;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.25);
+}
+
+.card p {
+    color: #222 !important;
+    font-size: 1.15rem;
+    font-weight: 500;
+    line-height: 1.7;
+}
+
+.card.bg-primary,
+.card.bg-success,
+.card.bg-warning {
+    border: none !important;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+    .card.bg-primary:hover,
+    .card.bg-success:hover,
+    .card.bg-warning:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 25px rgba(0,0,0,0.3);
+    }
+
+    .card.bg-primary h6,
+    .card.bg-success h6,
+    .card.bg-warning h6 {
+        color: #fff !important;
+        text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+        font-size: 1.3rem !important;
+    }
+
+.card i {
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+    font-size: 2.8rem !important;
+}
+
+.card-body {
+    background-color: #fff;
+    border-radius: 0.9rem;
+}
+
+/* ========= Responsive ========= */
+@media (max-width: 768px) {
+    .card h5, .card h6 {
+        font-size: 1.15rem !important;
+    }
+
+    .card p {
+        font-size: 1.05rem;
+    }
+}

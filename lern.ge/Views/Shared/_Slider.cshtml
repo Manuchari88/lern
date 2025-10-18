@@ -1,15 +1,19 @@
 ﻿<div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner" style="height: 600px;">
 
+        <!-- პირველი სლაიდი (მთავარი LCP ელემენტი) -->
         <div class="carousel-item active">
-             <picture>
+            <picture>
+                <!-- preload ამ ფოტოზე head-ში უნდა იყოს -->
                 <source srcset="images/14.webp" type="image/webp">
                 <img src="images/14.jpg"
                      class="d-block w-100"
                      alt="დაიწყე მართვა დღეს"
                      width="1920" height="600"
+                     decoding="async"
+                     fetchpriority="high"
                      style="object-fit: cover; height: 600px;">
-            </picture> 
+            </picture>
             <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
                 <div class="text-center text-white p-2 p-md-3 bg-dark bg-opacity-50 rounded">
                     <h1 class="h3 fw-bold">დაიწყე მომზადება საჩხერის ქალაქის გამოცდისთვის</h1>
@@ -19,6 +23,7 @@
             </div>
         </div>
 
+        <!-- მეორე სლაიდი -->
         <div class="carousel-item">
             <picture>
                 <source srcset="images/13.webp" type="image/webp">
@@ -27,6 +32,7 @@
                      alt="ისწავლე პროფესიონალებთან ერთად"
                      width="1920" height="600"
                      loading="lazy"
+                     decoding="async"
                      style="object-fit: cover; height: 600px;">
             </picture>
             <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
@@ -38,6 +44,7 @@
             </div>
         </div>
 
+        <!-- მესამე სლაიდი -->
         <div class="carousel-item">
             <picture>
                 <source srcset="images/15.webp" type="image/webp">
@@ -46,12 +53,13 @@
                      alt="საოჯახო სასტუმრო საჩხერეში"
                      width="1920" height="600"
                      loading="lazy"
+                     decoding="async"
                      style="object-fit: cover; height: 600px;">
             </picture>
             <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
                 <div class="text-center text-white p-2 p-md-3 bg-dark bg-opacity-50 rounded">
                     <h1 class="h3 fw-bold">საოჯახო სასტუმრო საჩხერეში</h1>
-                    <p class="small">საჭიროების შემთხვევაში ისრაგბელეთ სასტურმოს მომსახურებით.</p>
+                    <p class="small">საჭიროების შემთხვევაში ისარგებლეთ სასტუმროს მომსახურებით.</p>
                     <p class="h4 fw-bold">ტელ: 568 986 045</p>
                 </div>
             </div>
