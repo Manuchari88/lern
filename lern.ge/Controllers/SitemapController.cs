@@ -21,7 +21,7 @@ namespace Lern.ge.Controllers
             var sitemap = new XDocument(new XElement(ns + "urlset",
                 from page in pages
                 select new XElement(ns + "url",
-                    new XElement(ns + "loc", $"{baseUrl}/{page}"),
+                    new XElement(ns + "loc", page == "" ? baseUrl : $"{baseUrl}/{page}"),
                     new XElement(ns + "changefreq", "weekly"),
                     new XElement(ns + "priority", "1.0")
                 )
