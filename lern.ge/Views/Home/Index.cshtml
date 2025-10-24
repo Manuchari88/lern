@@ -2,58 +2,58 @@
     ViewData["Title"] = "";
 }
 <style>
-    /* ქარდის სათაურები */
-    .card h5,
-    .card h6 {
-        font-weight: 800 !important;
-        color: #111 !important;
-        font-size: 1.35rem !important; /* გაზრდილი ზომა */
-        text-shadow: 1px 1px 3px rgba(0,0,0,0.25);
+    /* ===== Card Styles ===== */
+    .card {
+        border-radius: 1rem; /* რბილი კუთხეები */
+        transition: transform 0.25s ease, box-shadow 0.25s ease; /* hover ეფექტი */
     }
 
-    /* ქარდის ტექსტი */
-    .card p {
-        color: #222 !important;
-        font-size: 1.15rem; /* ოდნავ უფრო დიდი ტექსტი */
-        font-weight: 500;
-        line-height: 1.7;
-    }
-
-    /* ფერადი ქარდები */
-    .card.bg-primary,
-    .card.bg-success,
-    .card.bg-warning {
-        border: none !important;
-        transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-
-        .card.bg-primary:hover,
-        .card.bg-success:hover,
-        .card.bg-warning:hover {
+        .card:hover {
             transform: scale(1.05);
-            box-shadow: 0 6px 25px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25); /* მკვეთრი ჩრდილი */
         }
 
-        /* ფერად ფონებზე მკვეთრი ტექსტი */
-        .card.bg-primary h6,
-        .card.bg-success h6,
-        .card.bg-warning h6 {
-            color: #fff !important;
-            text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
-            font-size: 1.3rem !important;
+        .card h5, .card h6 {
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 0.5rem;
         }
 
-    .card i {
-        text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
-        font-size: 2.8rem !important;
+        .card p {
+            text-align: center;
+            font-size: 1rem;
+            color: #555;
+        }
+
+        /* SVG იკონები */
+        .card svg {
+            width: 3em;
+            height: 3em;
+            margin-bottom: 1rem;
+            fill: currentColor;
+        }
+
+    /* Responsive */
+    @@media(max - width: 576px)
+
+    {
+        .card h5, .card h6
+
+    {
+        font-size: 1.1rem;
     }
 
-    /* შიდა კონტენტის ფონური კონტრასტი */
-    .card-body {
-        background-color: #fff;
-        border-radius: 0.9rem;
+    .card p {
+        font-size: 0.95rem;
     }
 
+    }
+
+    .hero-section {
+        max-width: 966px;
+        margin: 0 auto;
+        padding: 1.5rem 1rem; /* 2rem -> 1.5rem */
+    }
     /* Responsive ტექსტი */
     @@media (max-width: 768px) {
         .card h5, .card h6
@@ -67,6 +67,33 @@
     }
 
     }
+
+    .info-section {
+        margin-top: 10px !important; /* 20px -> 10px */
+    }
+
+    .info-box {
+        border-left: 5px solid #0d6efd; /* პატარა ვიზუალური აქცენტი, მაგალითად primary ფერი */
+        background: #f8f9fa; /* მსუბუქი, ჰაეროვანი */
+        box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15); /* ცოტა shadow */
+        padding: 2rem 2.5rem;
+        transition: transform 0.3s ease;
+    }
+
+        .info-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .info-box h5 {
+            font-size: 1.5rem;
+        }
+
+        .info-box p {
+            font-size: 1.125rem;
+            line-height: 1.6;
+            color: #495057;
+        }
+
 </style>
 
 <section class="hero-section">
@@ -129,13 +156,15 @@
 </section>
 
 
-<section class="container mt-5 pt-5 text-center">
+<section class="info-section container mt-3 pt-3">
     <div class="row justify-content-center">
         <div class="col-lg-10">
-            <div class="bg-light shadow rounded p-4 p-md-5">
-                <h5 class="fw-bold mb-3">აიღე მართვის მოწმობა საჩხერეში ჩვენი დახმარებით!</h5>
-                <p class="lead text-muted mb-0">
-                    ჩვენი ავტოსკოლა გთავაზობთ საჩხერის გამოცდისთვის სრულყოფილ მომზადებას.
+            <div class="info-box bg-light shadow-lg rounded p-4 p-md-5 position-relative">
+                <h5 class="fw-bold mb-3 text-center">აიღე მართვის მოწმობა საჩხერეში ჩვენი დახმარებით!</h5>
+                <p class="lead text-muted mb-0 text-center">
+                 ჩვენი გამოცდილი ინსტრუქტორის დახმარებით, მარტივად დაძლევთ ყველა იმ დაბრკოლებას და სირთულეს რაც მართვის მოწმობის აღების  პროცესში შეგხვდებათ.
+                 დაგეხმარებით ყველა ეტაპზე. ჩვენთან წარმატება გარანტირებულია!
+
                 </p>
             </div>
         </div>
@@ -144,18 +173,17 @@
 
 
 
-<section class="container my-5" id="courses">
-    <div class="row">
-        <div class="col-md-4 mb-4" id="moedani">
-            <div class="card h-100 shadow-lg border-0">
-                <div class="card-body">
-                    <div class="text-center text-primary mb-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" style="width: 3em; height: 3em; fill: currentColor;">
-                            <path d="M147 106.7l-29.8 85.3 122.9 0 0-96-77.9 0c-6.8 0-12.9 4.3-15.1 10.7zM48.6 193.9L86.5 85.6C97.8 53.5 128.1 32 162.1 32L360 32c25.2 0 48.9 11.9 64 32l96.2 128.3C587.1 196.5 640 252.1 640 320l0 16c0 35.3-28.7 64-64 64l-16.4 0c-4 44.9-41.7 80-87.6 80s-83.6-35.1-87.6-80l-144.7 0c-4 44.9-41.7 80-87.6 80s-83.6-35.1-87.6-80l-.4 0c-35.3 0-64-28.7-64-64l0-80c0-30.1 20.7-55.3 48.6-62.1zM440 192l-67.2-89.6c-3-4-7.8-6.4-12.8-6.4l-72 0 0 96 152 0zM152 432a40 40 0 1 0 0-80 40 40 0 1 0 0 80zm360-40a40 40 0 1 0 -80 0 40 40 0 1 0 80 0z" />
-                        </svg>
-                    </div>
-                    <h5 class="card-title fw-bold text-center">მოედნის გამოცდისთვის მომზადება</h5>
-                    <p class="card-text text-muted">
+<section class="container my-5">
+    <div class="row g-4 justify-content-center">
+
+        <div class="col-md-4" id="moedani">
+            <div class="card shadow-lg h-100 border-0">
+                <div class="card-body text-center text-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                        <path d="M147 106.7l-29.8 85.3 122.9 0 0-96-77.9 0c-6.8 0-12.9 4.3-15.1 10.7zM48.6 193.9L86.5 85.6C97.8 53.5 128.1 32 162.1 32L360 32c25.2 0 48.9 11.9 64 32l96.2 128.3C587.1 196.5 640 252.1 640 320l0 16c0 35.3-28.7 64-64 64l-16.4 0c-4 44.9-41.7 80-87.6 80s-83.6-35.1-87.6-80l-144.7 0c-4 44.9-41.7 80-87.6 80s-83.6-35.1-87.6-80l-.4 0c-35.3 0-64-28.7-64-64l0-80c0-30.1 20.7-55.3 48.6-62.1zM440 192l-67.2-89.6c-3-4-7.8-6.4-12.8-6.4l-72 0 0 96 152 0zM152 432a40 40 0 1 0 0-80 40 40 0 1 0 0 80zm360-40a40 40 0 1 0 -80 0 40 40 0 1 0 80 0z" />
+                    </svg>
+                    <h5 class="fw-bold mt-2">მოედნის გამოცდისთვის მომზადება</h5>
+                    <p>
                         მოედანზე საფუძვლიანად შეგასწავლით გამოცდისთვის საჭირო ყველა ელემენტს.
                         ისწავლით მოკლე დროში გარანტირებული ჩაბარების მეთოდებს.
                     </p>
@@ -163,16 +191,14 @@
             </div>
         </div>
 
-        <div class="col-md-4 mb-4" id="qalaqi">
-            <div class="card h-100 shadow-lg border-0">
-                <div class="card-body">
-                    <div class="text-center text-success mb-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" style="width: 3em; height: 3em; fill: currentColor;">
-                            <path d="M287.9 96L211.7 96C182.3 96 156.6 116.1 149.6 144.6L65.4 484.5C57.9 514.7 80.8 544 112 544L287.9 544L287.9 480C287.9 462.3 302.2 448 319.9 448C337.6 448 351.9 462.3 351.9 480L351.9 544L528 544C559.2 544 582.1 514.7 574.6 484.5L490.5 144.6C483.4 116.1 457.8 96 428.3 96L351.9 96L351.9 160C351.9 177.7 337.6 192 319.9 192C302.2 192 287.9 177.7 287.9 160L287.9 96zM351.9 288L351.9 352C351.9 369.7 337.6 384 319.9 384C302.2 384 287.9 369.7 287.9 352L287.9 288C287.9 270.3 302.2 256 319.9 256C337.6 256 351.9 270.3 351.9 288z" />
-                        </svg>
-                    </div>
-                    <h5 class="card-title fw-bold text-center">ქალაქის გამოცდისთვის მომზადება</h5>
-                    <p class="card-text text-muted">
+        <div class="col-md-4" id="qalaqi">
+            <div class="card shadow-lg h-100 border-0">
+                <div class="card-body text-center text-success">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                        <path d="M287.9 96L211.7 96C182.3 96 156.6 116.1 149.6 144.6L65.4 484.5C57.9 514.7 80.8 544 112 544L287.9 544L287.9 480C287.9 462.3 302.2 448 319.9 448C337.6 448 351.9 462.3 351.9 480L351.9 544L528 544C559.2 544 582.1 514.7 574.6 484.5L490.5 144.6C483.4 116.1 457.8 96 428.3 96L351.9 96L351.9 160C351.9 177.7 337.6 192 319.9 192C302.2 192 287.9 177.7 287.9 160L287.9 96zM351.9 288L351.9 352C351.9 369.7 337.6 384 319.9 384C302.2 384 287.9 369.7 287.9 352L287.9 288C287.9 270.3 302.2 256 319.9 256C337.6 256 351.9 270.3 351.9 288z" />
+                    </svg>
+                    <h5 class="fw-bold mt-2">ქალაქის მომზადება</h5>
+                    <p>
                         ქალაქის პრაქტიკის დროს შეგასწავლით რეალურ საგზაო მოძრაობას, უსაფრთხო მართვას და მანევრირებას.
                         საგამოცდო წესების მიხედვით, შეგასწავლით ყველა იმ ნიუანსს რომელიც საჭიროა ქალაქის გამოცდის ჩასაბარებლად.
                         გაკვეთილები ტარდება საგამოცდო მარშუტების მსგავს გზებზე, გზები შერჩეულია ისე, რომ მარტივად შეძლოთ გამოცდაზე ყველა მონაკვეთის გავლა.
@@ -181,16 +207,14 @@
             </div>
         </div>
 
-        <div class="col-md-4 mb-4" id="marshutebi">
-            <div class="card h-100 shadow-lg border-0">
-                <div class="card-body">
-                    <div class="text-center text-warning mb-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" style="width: 3em; height: 3em; fill: currentColor;">
-                            <path d="M288 0c-69.59 0-126 56.41-126 126 0 56.26 82.35 158.8 113.9 196.02 6.39 7.54 17.82 7.54 24.2 0C331.65 284.8 414 182.26 414 126 414 56.41 357.59 0 288 0zm0 168c-23.2 0-42-18.8-42-42s18.8-42 42-42 42 18.8 42 42-18.8 42-42 42zM20.12 215.95A32.006 32.006 0 0 0 0 245.66v250.32c0 11.32 11.43 19.06 21.94 14.86L160 448V214.92c-8.84-15.98-16.07-31.54-21.25-46.42L20.12 215.95zM288 359.67c-14.07 0-27.38-6.18-36.51-16.96-19.66-23.2-40.57-49.62-59.49-76.72v182l192 64V266c-18.92 27.09-39.82 53.52-59.49 76.72-9.13 10.77-22.44 16.95-36.51 16.95zm266.06-198.51L416 224v288l139.88-55.95A31.996 32.006 0 0 0 576 426.34V176.02c0-11.32-11.43-19.06-21.94-14.86z" />
-                        </svg>
-                    </div>
-                    <h5 class="card-title fw-bold text-center">საგამოცდო მარშუტებზე მომზადება</h5>
-                    <p class="card-text text-muted">
+        <div class="col-md-4" id="marshutebi">
+            <div class="card shadow-lg h-100 border-0">
+                <div class="card-body text-center text-warning">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                        <path d="M288 0c-69.59 0-126 56.41-126 126 0 56.26 82.35 158.8 113.9 196.02 6.39 7.54 17.82 7.54 24.2 0C331.65 284.8 414 182.26 414 126 414 56.41 357.59 0 288 0zm0 168c-23.2 0-42-18.8-42-42s18.8-42 42-42 42 18.8 42 42-18.8 42-42 42zM20.12 215.95A32.006 32.006 0 0 0 0 245.66v250.32c0 11.32 11.43 19.06 21.94 14.86L160 448V214.92c-8.84-15.98-16.07-31.54-21.25-46.42L20.12 215.95zM288 359.67c-14.07 0-27.38-6.18-36.51-16.96-19.66-23.2-40.57-49.62-59.49-76.72v182l192 64V266c-18.92 27.09-39.82 53.52-59.49 76.72-9.13 10.77-22.44 16.95-36.51 16.95zm266.06-198.51L416 224v288l139.88-55.95A31.996 32.006 0 0 0 576 426.34V176.02c0-11.32-11.43-19.06-21.94-14.86z" />
+                    </svg>
+                    <h5 class="fw-bold mt-2">საგამოცდო მარშუტებზე მომზადება</h5>
+                    <p>
                         დეტალურად გავივლით ყველა საგამოცდო მარშუტს, მიიღებთ ყველა საჭირო რჩევას იმისთვის რომ, გამოცდაზე მაქსიმალურად მომზადებული გახვიდეთ და მზად იყოთ ყველა შემთხვევისთვის, ყველა მონაკვეთზე.
                         მიიღებთ კვალიფიციურ რჩევას და ინფორმაციას მარშუტის ყველა მონაკვეთზე მართვის წესების შესახებ.
                     </p>
@@ -200,4 +224,44 @@
 
     </div>
 </section>
+<!-- ===== Smooth Scroll Offset Script ===== -->
+<script>
+    document.querySelectorAll('.hero-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            const offset = 100; // Adjust according to your navbar / hero section height
+            const elementPosition = target.getBoundingClientRect().top + window.scrollY;
+            const offsetPosition = elementPosition - offset;
 
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+
+<section class="reviews-section container py-5 mt-5 mb-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <div class="reviews-box p-4 p-md-5 shadow-sm bg-white rounded-3 position-relative">
+                <div class="left-accent"></div>
+                <h3 class="fw-bold mb-3">ჩვენი მომხმარებლების შეფასებები</h3>
+
+                <div class="elfsight-app-db7fd3aa-fcfd-491b-99c7-0136c7f9b024"
+                     data-elfsight-app-lazy
+                     id="elfsight-reviews-widget"
+                     style="min-height: 400px;">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== Optional CSS for scroll-padding (alternative to JS) ===== -->
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
+</style>
