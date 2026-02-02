@@ -13,9 +13,9 @@ var app = builder.Build();
 //// ვიყენებთ app.Run-ს Middleware-ის ნაცვლად, რადგან გვინდა მოთხოვნა აქ დასრულდეს
 app.Run(async (context) =>
 {
-    //context.Response.StatusCode = 301;
-    //context.Response.Redirect("https://sdrive.ge", permanent: true);
-    //await Task.CompletedTask;
+    context.Response.StatusCode = 301;
+    context.Response.Redirect("https://sdrive.ge", permanent: true);
+    await Task.CompletedTask;
 });
 
 // ქვემოთ მოცემული კოდი აღარ გაეშვება, მაგრამ სინტაქსურად საჭიროა
