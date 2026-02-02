@@ -1,39 +1,18 @@
-﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-
-var builder = WebApplication.CreateBuilder(args);
-
-// სერვისების დამატება
+﻿var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
-// --- 301 მუდმივი გადამისამართება SEO-სთვის ---
-// Map მეთოდი პირდაპირ იჭერს ყველა მოთხოვნას და აღარ ტოვებს შეცდომის შანსს
-app.Map("{*path}", async (HttpContext context) =>
+// ეს ბლოკი აკეთებს ყველაფერს, რაც გუგლს სჭირდება:
+// 1. იჭერს ნებისმიერ მოთხოვნას
+// 2. აბრუნებს 301 სტატუსს
+// 3. უთითებს ახალ მისამართს
+app.Run(async context =>
 {
     var newUrl = "https://sdrive.ge" + context.Request.Path + context.Request.QueryString;
-
-    context.Response.Headers.Location = newUrl;
     context.Response.StatusCode = 301;
-
-    await context.Response.CompleteAsync();
+    context.Response.Headers.Location = newUrl;
+    await Task.CompletedTask;
 });
-
-// ქვემოთ მოცემული კოდი სტრუქტურისთვის
-if (!app.Environment.IsDevelopment())
-{
-    app.UseExceptionHandler("/Home/Error");
-    app.UseHsts();
-}
-
-app.UseHttpsRedirection();
-app.UseStaticFiles();
-app.UseRouting();
-
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
