@@ -10,15 +10,18 @@ builder.Services.AddControllersWithViews();
 var app = builder.Build();
 
 // --- 301 მუდმივი გადამისამართება SEO-სთვის ---
-//// ვიყენებთ app.Run-ს Middleware-ის ნაცვლად, რადგან გვინდა მოთხოვნა აქ დასრულდეს
-app.Run(async (context) =>
+// Map მეთოდი პირდაპირ იჭერს ყველა მოთხოვნას და აღარ ტოვებს შეცდომის შანსს
+app.Map("{*path}", async (HttpContext context) =>
 {
+    var newUrl = "https://sdrive.ge" + context.Request.Path + context.Request.QueryString;
+
+    context.Response.Headers.Location = newUrl;
     context.Response.StatusCode = 301;
-    context.Response.Redirect("https://sdrive.ge", permanent: true);
-    await Task.CompletedTask;
+
+    await context.Response.CompleteAsync();
 });
 
-// ქვემოთ მოცემული კოდი აღარ გაეშვება, მაგრამ სინტაქსურად საჭიროა
+// ქვემოთ მოცემული კოდი სტრუქტურისთვის
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
@@ -28,7 +31,6 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
-app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
